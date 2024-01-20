@@ -14,6 +14,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
+        
+        //appearance 뷰컨트롤러에 사용하지 않더라도 색 바꾸기 가능
+        // 모든 뷰의 레이블 글자색을 블루로?(디폴트를 바꿔주는것/ 지정된 색이 있으면 그 색으로 됨)
+//        UIView.appearance().backgroundColor = UIColor(red: 0, green: 0, blue: 146, alpha: 1)
+        UILabel.appearance().textColor = UIColor(red: 255, green: 255, blue: 255, alpha: 1)
+        
+        
         return true
     }
 

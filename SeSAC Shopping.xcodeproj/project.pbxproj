@@ -13,6 +13,17 @@
 		8B2F3FDA2B5B9DED00205E28 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8B2F3FD82B5B9DED00205E28 /* Main.storyboard */; };
 		8B2F3FDC2B5B9DED00205E28 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8B2F3FDB2B5B9DED00205E28 /* Assets.xcassets */; };
 		8B2F3FDF2B5B9DED00205E28 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8B2F3FDD2B5B9DED00205E28 /* LaunchScreen.storyboard */; };
+		8B2F3FE82B5BA04600205E28 /* Onboarding.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8B2F3FE72B5BA04600205E28 /* Onboarding.storyboard */; };
+		8B2F3FEA2B5BA99F00205E28 /* OnboardingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B2F3FE92B5BA99F00205E28 /* OnboardingViewController.swift */; };
+		8B2F3FEE2B5BAC4300205E28 /* Enumeration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B2F3FED2B5BAC4300205E28 /* Enumeration.swift */; };
+		8B2F3FF12B5BBBCE00205E28 /* Profile.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8B2F3FF02B5BBBCE00205E28 /* Profile.storyboard */; };
+		8B2F3FF32B5BBBEA00205E28 /* SettingProfieViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B2F3FF22B5BBBEA00205E28 /* SettingProfieViewController.swift */; };
+		8B2F3FF62B5BC9E800205E28 /* UIViewController+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B2F3FF52B5BC9E800205E28 /* UIViewController+Extension.swift */; };
+		8B2F3FF82B5BDB4C00205E28 /* UIButton+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B2F3FF72B5BDB4C00205E28 /* UIButton+Extension.swift */; };
+		8B2F3FFA2B5BDE9F00205E28 /* SettingProfileImageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B2F3FF92B5BDE9F00205E28 /* SettingProfileImageViewController.swift */; };
+		8B2F3FFC2B5BE45C00205E28 /* UIImageView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B2F3FFB2B5BE45C00205E28 /* UIImageView+Extension.swift */; };
+		8B2F3FFF2B5BE75E00205E28 /* TextFieldEffects in Frameworks */ = {isa = PBXBuildFile; productRef = 8B2F3FFE2B5BE75E00205E28 /* TextFieldEffects */; };
+		8B2F40022B5BE76D00205E28 /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = 8B2F40012B5BE76D00205E28 /* Alamofire */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +35,15 @@
 		8B2F3FDB2B5B9DED00205E28 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		8B2F3FDE2B5B9DED00205E28 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		8B2F3FE02B5B9DED00205E28 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		8B2F3FE72B5BA04600205E28 /* Onboarding.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Onboarding.storyboard; sourceTree = "<group>"; };
+		8B2F3FE92B5BA99F00205E28 /* OnboardingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingViewController.swift; sourceTree = "<group>"; };
+		8B2F3FED2B5BAC4300205E28 /* Enumeration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Enumeration.swift; sourceTree = "<group>"; };
+		8B2F3FF02B5BBBCE00205E28 /* Profile.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Profile.storyboard; sourceTree = "<group>"; };
+		8B2F3FF22B5BBBEA00205E28 /* SettingProfieViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingProfieViewController.swift; sourceTree = "<group>"; };
+		8B2F3FF52B5BC9E800205E28 /* UIViewController+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Extension.swift"; sourceTree = "<group>"; };
+		8B2F3FF72B5BDB4C00205E28 /* UIButton+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIButton+Extension.swift"; sourceTree = "<group>"; };
+		8B2F3FF92B5BDE9F00205E28 /* SettingProfileImageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingProfileImageViewController.swift; sourceTree = "<group>"; };
+		8B2F3FFB2B5BE45C00205E28 /* UIImageView+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImageView+Extension.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -31,6 +51,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8B2F3FFF2B5BE75E00205E28 /* TextFieldEffects in Frameworks */,
+				8B2F40022B5BE76D00205E28 /* Alamofire in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -56,6 +78,10 @@
 		8B2F3FD12B5B9DED00205E28 /* SeSAC Shopping */ = {
 			isa = PBXGroup;
 			children = (
+				8B2F40032B5BEEAE00205E28 /* CollectionViewCell */,
+				8B2F3FF42B5BC9D900205E28 /* Extension */,
+				8B2F3FEF2B5BBBC200205E28 /* Profile */,
+				8B2F3FE62B5BA03A00205E28 /* Onboarding */,
 				8B2F3FD22B5B9DED00205E28 /* AppDelegate.swift */,
 				8B2F3FD42B5B9DED00205E28 /* SceneDelegate.swift */,
 				8B2F3FD62B5B9DED00205E28 /* ViewController.swift */,
@@ -63,8 +89,45 @@
 				8B2F3FDB2B5B9DED00205E28 /* Assets.xcassets */,
 				8B2F3FDD2B5B9DED00205E28 /* LaunchScreen.storyboard */,
 				8B2F3FE02B5B9DED00205E28 /* Info.plist */,
+				8B2F3FED2B5BAC4300205E28 /* Enumeration.swift */,
 			);
 			path = "SeSAC Shopping";
+			sourceTree = "<group>";
+		};
+		8B2F3FE62B5BA03A00205E28 /* Onboarding */ = {
+			isa = PBXGroup;
+			children = (
+				8B2F3FE72B5BA04600205E28 /* Onboarding.storyboard */,
+				8B2F3FE92B5BA99F00205E28 /* OnboardingViewController.swift */,
+			);
+			path = Onboarding;
+			sourceTree = "<group>";
+		};
+		8B2F3FEF2B5BBBC200205E28 /* Profile */ = {
+			isa = PBXGroup;
+			children = (
+				8B2F3FF02B5BBBCE00205E28 /* Profile.storyboard */,
+				8B2F3FF22B5BBBEA00205E28 /* SettingProfieViewController.swift */,
+				8B2F3FF92B5BDE9F00205E28 /* SettingProfileImageViewController.swift */,
+			);
+			path = Profile;
+			sourceTree = "<group>";
+		};
+		8B2F3FF42B5BC9D900205E28 /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+				8B2F3FF52B5BC9E800205E28 /* UIViewController+Extension.swift */,
+				8B2F3FF72B5BDB4C00205E28 /* UIButton+Extension.swift */,
+				8B2F3FFB2B5BE45C00205E28 /* UIImageView+Extension.swift */,
+			);
+			path = Extension;
+			sourceTree = "<group>";
+		};
+		8B2F40032B5BEEAE00205E28 /* CollectionViewCell */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = CollectionViewCell;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -83,6 +146,10 @@
 			dependencies = (
 			);
 			name = "SeSAC Shopping";
+			packageProductDependencies = (
+				8B2F3FFE2B5BE75E00205E28 /* TextFieldEffects */,
+				8B2F40012B5BE76D00205E28 /* Alamofire */,
+			);
 			productName = "SeSAC Shopping";
 			productReference = 8B2F3FCF2B5B9DED00205E28 /* SeSAC Shopping.app */;
 			productType = "com.apple.product-type.application";
@@ -111,6 +178,10 @@
 				Base,
 			);
 			mainGroup = 8B2F3FC62B5B9DED00205E28;
+			packageReferences = (
+				8B2F3FFD2B5BE75E00205E28 /* XCRemoteSwiftPackageReference "TextFieldEffects" */,
+				8B2F40002B5BE76D00205E28 /* XCRemoteSwiftPackageReference "Alamofire" */,
+			);
 			productRefGroup = 8B2F3FD02B5B9DED00205E28 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -127,7 +198,9 @@
 			files = (
 				8B2F3FDF2B5B9DED00205E28 /* LaunchScreen.storyboard in Resources */,
 				8B2F3FDC2B5B9DED00205E28 /* Assets.xcassets in Resources */,
+				8B2F3FF12B5BBBCE00205E28 /* Profile.storyboard in Resources */,
 				8B2F3FDA2B5B9DED00205E28 /* Main.storyboard in Resources */,
+				8B2F3FE82B5BA04600205E28 /* Onboarding.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -138,9 +211,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8B2F3FFC2B5BE45C00205E28 /* UIImageView+Extension.swift in Sources */,
 				8B2F3FD72B5B9DED00205E28 /* ViewController.swift in Sources */,
+				8B2F3FEE2B5BAC4300205E28 /* Enumeration.swift in Sources */,
 				8B2F3FD32B5B9DED00205E28 /* AppDelegate.swift in Sources */,
+				8B2F3FFA2B5BDE9F00205E28 /* SettingProfileImageViewController.swift in Sources */,
 				8B2F3FD52B5B9DED00205E28 /* SceneDelegate.swift in Sources */,
+				8B2F3FF62B5BC9E800205E28 /* UIViewController+Extension.swift in Sources */,
+				8B2F3FF82B5BDB4C00205E28 /* UIButton+Extension.swift in Sources */,
+				8B2F3FF32B5BBBEA00205E28 /* SettingProfieViewController.swift in Sources */,
+				8B2F3FEA2B5BA99F00205E28 /* OnboardingViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -297,8 +377,9 @@
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -306,9 +387,12 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.ohddang.SeSAC-Shopping";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -324,8 +408,9 @@
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -333,9 +418,12 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.ohddang.SeSAC-Shopping";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
@@ -361,6 +449,38 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		8B2F3FFD2B5BE75E00205E28 /* XCRemoteSwiftPackageReference "TextFieldEffects" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/raulriera/TextFieldEffects.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.7.0;
+			};
+		};
+		8B2F40002B5BE76D00205E28 /* XCRemoteSwiftPackageReference "Alamofire" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/Alamofire/Alamofire";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.8.1;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		8B2F3FFE2B5BE75E00205E28 /* TextFieldEffects */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 8B2F3FFD2B5BE75E00205E28 /* XCRemoteSwiftPackageReference "TextFieldEffects" */;
+			productName = TextFieldEffects;
+		};
+		8B2F40012B5BE76D00205E28 /* Alamofire */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 8B2F40002B5BE76D00205E28 /* XCRemoteSwiftPackageReference "Alamofire" */;
+			productName = Alamofire;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 8B2F3FC72B5B9DED00205E28 /* Project object */;
 }

@@ -24,6 +24,8 @@
 		8B2F3FFC2B5BE45C00205E28 /* UIImageView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B2F3FFB2B5BE45C00205E28 /* UIImageView+Extension.swift */; };
 		8B2F3FFF2B5BE75E00205E28 /* TextFieldEffects in Frameworks */ = {isa = PBXBuildFile; productRef = 8B2F3FFE2B5BE75E00205E28 /* TextFieldEffects */; };
 		8B2F40022B5BE76D00205E28 /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = 8B2F40012B5BE76D00205E28 /* Alamofire */; };
+		8B2F40082B5BEF4D00205E28 /* ProfileCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B2F40062B5BEF4D00205E28 /* ProfileCollectionViewCell.swift */; };
+		8B2F40092B5BEF4D00205E28 /* ProfileCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8B2F40072B5BEF4D00205E28 /* ProfileCollectionViewCell.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -44,6 +46,8 @@
 		8B2F3FF72B5BDB4C00205E28 /* UIButton+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIButton+Extension.swift"; sourceTree = "<group>"; };
 		8B2F3FF92B5BDE9F00205E28 /* SettingProfileImageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingProfileImageViewController.swift; sourceTree = "<group>"; };
 		8B2F3FFB2B5BE45C00205E28 /* UIImageView+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImageView+Extension.swift"; sourceTree = "<group>"; };
+		8B2F40062B5BEF4D00205E28 /* ProfileCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileCollectionViewCell.swift; sourceTree = "<group>"; };
+		8B2F40072B5BEF4D00205E28 /* ProfileCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ProfileCollectionViewCell.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -126,6 +130,8 @@
 		8B2F40032B5BEEAE00205E28 /* CollectionViewCell */ = {
 			isa = PBXGroup;
 			children = (
+				8B2F40062B5BEF4D00205E28 /* ProfileCollectionViewCell.swift */,
+				8B2F40072B5BEF4D00205E28 /* ProfileCollectionViewCell.xib */,
 			);
 			path = CollectionViewCell;
 			sourceTree = "<group>";
@@ -198,6 +204,7 @@
 			files = (
 				8B2F3FDF2B5B9DED00205E28 /* LaunchScreen.storyboard in Resources */,
 				8B2F3FDC2B5B9DED00205E28 /* Assets.xcassets in Resources */,
+				8B2F40092B5BEF4D00205E28 /* ProfileCollectionViewCell.xib in Resources */,
 				8B2F3FF12B5BBBCE00205E28 /* Profile.storyboard in Resources */,
 				8B2F3FDA2B5B9DED00205E28 /* Main.storyboard in Resources */,
 				8B2F3FE82B5BA04600205E28 /* Onboarding.storyboard in Resources */,
@@ -214,6 +221,7 @@
 				8B2F3FFC2B5BE45C00205E28 /* UIImageView+Extension.swift in Sources */,
 				8B2F3FD72B5B9DED00205E28 /* ViewController.swift in Sources */,
 				8B2F3FEE2B5BAC4300205E28 /* Enumeration.swift in Sources */,
+				8B2F40082B5BEF4D00205E28 /* ProfileCollectionViewCell.swift in Sources */,
 				8B2F3FD32B5B9DED00205E28 /* AppDelegate.swift in Sources */,
 				8B2F3FFA2B5BDE9F00205E28 /* SettingProfileImageViewController.swift in Sources */,
 				8B2F3FD52B5B9DED00205E28 /* SceneDelegate.swift in Sources */,

@@ -9,8 +9,7 @@ import UIKit
 
 extension UIImageView {
     /// 프로필 디자인 구성
-    func setProfileBoarder(_ image: UIImage?) {
-        self.image = image
+    func setProfileBoarder() {
         self.layer.cornerRadius = self.frame.width/2
         self.layer.borderWidth = 6
         self.layer.borderColor = CustomColor.pointColor?.cgColor

@@ -30,7 +30,8 @@ class SettingProfileImageViewController: UIViewController {
     func setRandomImage() {
 
         let randomImage = UIImage(named: "profile\(Int.random(in: 1...14))")
-        profileImageView.setProfileBoarder(randomImage)
+        profileImageView.image = randomImage
+        profileImageView.setProfileBoarder()
         
     }
 

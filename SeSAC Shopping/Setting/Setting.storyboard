@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="22154" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="mNk-rh-qP2">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22130"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Setting View Controller-->
+        <scene sceneID="dHi-sC-jSP">
+            <objects>
+                <viewController id="mNk-rh-qP2" customClass="SettingViewController" customModule="SeSAC_Shopping" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8Ht-Hb-sF3">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="insetGrouped" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="18" estimatedSectionHeaderHeight="-1" sectionFooterHeight="18" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="d4j-li-06D">
+                                <rect key="frame" x="0.0" y="59" width="393" height="759"/>
+                                <sections/>
+                            </tableView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="Fbt-yJ-3ON"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="d4j-li-06D" firstAttribute="top" secondItem="Fbt-yJ-3ON" secondAttribute="top" id="ag8-yv-Inb"/>
+                            <constraint firstItem="Fbt-yJ-3ON" firstAttribute="trailing" secondItem="d4j-li-06D" secondAttribute="trailing" id="fJ2-tj-0JX"/>
+                            <constraint firstItem="d4j-li-06D" firstAttribute="leading" secondItem="Fbt-yJ-3ON" secondAttribute="leading" id="g16-aF-z4K"/>
+                            <constraint firstItem="Fbt-yJ-3ON" firstAttribute="bottom" secondItem="d4j-li-06D" secondAttribute="bottom" id="t0m-je-f33"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="5AS-cV-upL"/>
+                    <connections>
+                        <outlet property="settingTableView" destination="d4j-li-06D" id="2Yy-md-F1R"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="kiA-7t-U60" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2023.6641221374045" y="552.81690140845069"/>
+        </scene>
+    </scenes>
+    <resources>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>

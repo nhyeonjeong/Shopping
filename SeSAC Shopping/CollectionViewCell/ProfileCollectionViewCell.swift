@@ -10,17 +10,23 @@ import UIKit
 class ProfileCollectionViewCell: UICollectionViewCell {
 
     @IBOutlet weak var profileImageView: UIImageView!
+    var isSelectedImage: Bool = false
     override func awakeFromNib() {
         super.awakeFromNib()
         
-        configureCell()
+        configureView()
+    }
+    
+    func configureCell(imageName: String) {
+        profileImageView.image = UIImage(named: imageName)
     }
 
 }
 
 extension ProfileCollectionViewCell {
-    func configureCell() {
+    func configureView() {
         
-        profileImageView.setProfileBoarder(/*<#T##image: UIImage?##UIImage?#>*/)
+        self.profileImageView.setProfileBoarder(selected: self.isSelectedImage)
+        
     }
 }

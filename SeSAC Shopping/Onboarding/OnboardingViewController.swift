@@ -18,12 +18,14 @@ class OnboardingViewController: UIViewController {
 
         settingView()
     }
-
+    // 시작하기 버튼 누를떄는 유저디폴트 삭제(이미지초기화)
     @IBAction func startButtonClicked(_ sender: UIButton) {
+//        UserDefaultManager.shared.ud.removeObject(forKey: "UserProfileImage")
+        UserDefaultManager.shared.ud.removeObject(forKey: "TempProfileImage")
 
         let sb = UIStoryboard(name: "Profile", bundle: nil)
 
-        let vc = sb.instantiateViewController(withIdentifier: SettingProfieViewController.identifier) as! SettingProfieViewController
+        let vc = sb.instantiateViewController(withIdentifier: SettingProfileViewController.identifier) as! SettingProfileViewController
         
         navigationController?.pushViewController(vc, animated: true)
         

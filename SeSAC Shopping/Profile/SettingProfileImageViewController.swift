@@ -20,12 +20,10 @@ class SettingProfileImageViewController: UIViewController {
         }
     }
     
-    // 이전화면에서 받아온 이미지이자 선택했을 때 갱신되는 이미지
-    var selectedImageString = ""
-    
     @IBOutlet weak var profileImageView: UIImageView!
-    
     @IBOutlet weak var profileCollectionView: UICollectionView!
+    // 이전화면에서 받아온 이미지이자 선택했을 때 갱신되는 이미지
+    var selectedImageString = "" //didset하면 오류..
     
     let inset: CGFloat = 15 // inset
     let spacing: CGFloat = 15 // 셀 사이 간격

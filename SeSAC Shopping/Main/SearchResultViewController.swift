@@ -10,29 +10,29 @@ import Alamofire
 
 class SearchResultViewController: UIViewController {
     
-    let buttonName = Group.allCases
-    
     @IBOutlet weak var buttonStackView: UIStackView!
     @IBOutlet weak var resultCount: UILabel!
     @IBOutlet var sortButtons: [UIButton]!
     @IBOutlet weak var resultCollectionview: UICollectionView!
+    
+    let buttonName = Group.allCases
+    
     let manager = SearchAPIManager()
+    
     var selectedSort = Group.sim // 선택된 버튼
     
     var searchText = "" // 검색단어 넘어와서 네트워크 통신
     
     var page = 1
     var isEnd = false // 마지막 페이지인지
-    // isEnd 같은 프로퍼티를 제공해주지 않을 경우, total Result Count 와 list를 비교해봐야 한다.
     
     // 보여줄 컨텐츠
-    var resultList: Search = Search(total: 0, start: 0, display: 0, items: [Item(title: "", link: "", image: "", lprice: "", mallName: "", productId: "")])
-    //    var statusText: String {
-    //        didSet {
-    //            viewDidLoad()
-    //        }
-    //    }
-    // collectionview Layout
+    var resultList: Search = Search(total: 0, start: 0, display: 0, items: [Item(title: "", link: "", image: "", lprice: "", mallName: "", productId: "")]) {
+        didSet {
+            resultCollectionview.reloadData()
+        }
+    }
+    
     let inset: CGFloat = 15
     let itemSpacing: CGFloat = 15 // 가로간격
     let lineSpacing: CGFloat = 20 // 세로간격
@@ -46,7 +46,7 @@ class SearchResultViewController: UIViewController {
             self.resultList = value
             self.resultCount.text = "\(self.resultList.total) 개의 검색 결과"
             // 통신 후에는 컬렉션뷰 다시 그리기
-            self.resultCollectionview.reloadData()
+//            self.resultCollectionview.reloadData()
             
         } // 제일 처음에는 정확도로
     
@@ -65,7 +65,7 @@ class SearchResultViewController: UIViewController {
             self.resultList = value
             self.resultCount.text = "\(self.resultList.total) 개의 검색 결과"
             // 통신 후에는 컬렉션뷰 다시 그리기
-            self.resultCollectionview.reloadData()
+//            self.resultCollectionview.reloadData()
         }
         
         resultCollectionview.scrollToItem(at: IndexPath(row: 0, section: 0), at: .top, animated: false)

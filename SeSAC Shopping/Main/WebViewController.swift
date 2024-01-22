@@ -75,7 +75,7 @@ extension WebViewController {
     func setBarButton() {
         // 하트 버튼 그려지는 곳
         let likeButton = UIBarButtonItem(image: likeSystemImage, style: .plain, target: self, action: #selector(likeBarButtonItemClicked))
-        
+        likeButton.tintColor = CustomColor.textColor
         navigationItem.rightBarButtonItem = likeButton
     }
     

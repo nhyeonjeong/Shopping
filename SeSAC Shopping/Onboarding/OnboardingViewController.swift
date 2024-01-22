@@ -9,7 +9,7 @@ import UIKit
 
 class OnboardingViewController: UIViewController {
 
-    @IBOutlet weak var titleLabel: UILabel!
+    @IBOutlet weak var titleImageView: UIImageView!
     @IBOutlet weak var mainImageView: UIImageView!
     @IBOutlet weak var startAppButton: UIButton!
     
@@ -35,11 +35,9 @@ class OnboardingViewController: UIViewController {
 
 extension OnboardingViewController {
     func settingView() {
-        titleLabel.text = "SeSAC\nShopping"
-        titleLabel.textColor = CustomColor.pointColor
-        titleLabel.textAlignment = .center
-        titleLabel.font = .boldSystemFont(ofSize: 40)
-        titleLabel.numberOfLines = 2
+
+        titleImageView.image = UIImage(named: "sesacShopping")
+        titleImageView.contentMode = .scaleAspectFill
         
         mainImageView.image = UIImage(named: "onboarding")
         mainImageView.contentMode = .scaleAspectFill

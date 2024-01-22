@@ -10,35 +10,28 @@ import Alamofire
 
 class SearchResultViewController: UIViewController {
     
-    enum Group: String, CaseIterable {
-        case sim = " 정확도 "
-        case date = " 날짜순 "
-        case dsc = " 가격높은순 "
-        case asc = " 가격낮은순 "
-        
-        func getNameString() -> String {
-            return String(describing: self)
-        }
-    }
-    
     let buttonName = Group.allCases
     
     @IBOutlet weak var buttonStackView: UIStackView!
     @IBOutlet weak var resultCount: UILabel!
     @IBOutlet var sortButtons: [UIButton]!
     @IBOutlet weak var resultCollectionview: UICollectionView!
-    
+    let manager = SearchAPIManager()
     var selectedSort = Group.sim // 선택된 버튼
     
     var searchText = "" // 검색단어 넘어와서 네트워크 통신
     
     var page = 1
-    var End = false // 마지막 페이지인지
+    var isEnd = false // 마지막 페이지인지
     // isEnd 같은 프로퍼티를 제공해주지 않을 경우, total Result Count 와 list를 비교해봐야 한다.
     
     // 보여줄 컨텐츠
     var resultList: Search = Search(total: 0, start: 0, display: 0, items: [Item(title: "", link: "", image: "", lprice: "", mallName: "", productId: "")])
-    
+    //    var statusText: String {
+    //        didSet {
+    //            viewDidLoad()
+    //        }
+    //    }
     // collectionview Layout
     let inset: CGFloat = 15
     let itemSpacing: CGFloat = 15 // 가로간격
@@ -49,7 +42,14 @@ class SearchResultViewController: UIViewController {
         configureView()
         configureCollectionView()
         
-        callRequest(text: searchText, sort: Group.sim) // 제일 처음에는 정확도로
+        manager.callRequest(text: searchText, sort: Group.sim, page: page) { value in
+            self.resultList = value
+            self.resultCount.text = "\(self.resultList.total) 개의 검색 결과"
+            // 통신 후에는 컬렉션뷰 다시 그리기
+            self.resultCollectionview.reloadData()
+            
+        } // 제일 처음에는 정확도로
+    
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -59,43 +59,23 @@ class SearchResultViewController: UIViewController {
     
     // sortButtons 눌렸을 때
     @IBAction func sortButtonClicked(_ sender: UIButton) {
-        callRequest(text: searchText, sort: Group.allCases[sender.tag])
+        page = 1
+        manager.callRequest(text: searchText, sort: Group.allCases[sender.tag], page: page) { value in
+            
+            self.resultList = value
+            self.resultCount.text = "\(self.resultList.total) 개의 검색 결과"
+            // 통신 후에는 컬렉션뷰 다시 그리기
+            self.resultCollectionview.reloadData()
+        }
+        
+        resultCollectionview.scrollToItem(at: IndexPath(row: 0, section: 0), at: .top, animated: false)
+
         
         // 버튼 디자인도 바뀌도록
         selectedSort = Group.allCases[sender.tag]
         configureButtonColor()
         buttonStackView.reloadInputViews()
     }
-    
-    func callRequest(text: String, sort: Group) {
-        let query = text.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed)!
-        print(sort.getNameString())
-        let url = "https://openapi.naver.com/v1/search/shop.json?query=\(query)&display=30&sort=\(sort.getNameString())"
-        
-        let headers: HTTPHeaders = ["X-Naver-Client-Id": APIKey.clientID,
-                                    "X-Naver-Client-Secret": APIKey.clientSecret]
-        
-        
-        AF.request(url, method: .get, headers: headers).responseDecodable(of: Search.self) { response in
-            switch response.result {
-            case .success(let success):
-                if self.page == 1 {
-                    self.resultList = success
-                } else {
-                    self.resultList.items.append(contentsOf: success.items)
-                }
-                
-                self.resultCount.text = "\(self.resultList.total) 개의 검색 결과"
-                // 통신 후에는 컬렉션뷰 다시 그리기
-                self.resultCollectionview.reloadData()
-                           
-            case .failure(let failure):
-                print(failure)
-            }
-       
-        }
-    }
-    
 
 }
 
@@ -141,6 +121,7 @@ extension SearchResultViewController: UICollectionViewDelegate, UICollectionView
     func configureCollectionView() {
         resultCollectionview.delegate = self
         resultCollectionview.dataSource = self
+        resultCollectionview.prefetchDataSource = self
         
         let xib = UINib(nibName: SearchResultCollectionViewCell.identifier, bundle: nil)
         resultCollectionview.register(xib, forCellWithReuseIdentifier: SearchResultCollectionViewCell.identifier)
@@ -169,6 +150,8 @@ extension SearchResultViewController: UICollectionViewDelegate, UICollectionView
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        
+        print(#function)
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: SearchResultCollectionViewCell.identifier, for: indexPath) as! SearchResultCollectionViewCell
         
         cell.configureCell(item: resultList.items[indexPath.row])
@@ -192,4 +175,30 @@ extension SearchResultViewController: UICollectionViewDelegate, UICollectionView
     }
     
 }
-// 반지
+
+
+extension SearchResultViewController: UICollectionViewDataSourcePrefetching {
+    func collectionView(_ collectionView: UICollectionView, prefetchItemsAt indexPaths: [IndexPath]) {
+        
+        for item in indexPaths {
+            let display = resultList.display
+            // 수학인가..
+            // 마지막 Row에서 4정도 뒤에 셀에 있고, 마지막 페이지가 아닐떄 다시 로드
+            if page * display - 4 == item.row && !isEnd {
+                page += 1
+                isEnd = resultList.total < page * display ? true : false
+                manager.callRequest(text: searchText, sort: selectedSort, page: page) { value in
+                    self.resultList = value
+                    // 통신 후에는 컬렉션뷰 다시 그리기
+                    self.resultCollectionview.reloadData()
+                }
+
+            }
+        }
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, cancelPrefetchingForItemsAt indexPaths: [IndexPath]) {
+        //
+    }
+
+}

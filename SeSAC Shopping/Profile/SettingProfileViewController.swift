@@ -31,12 +31,6 @@ class SettingProfileViewController: UIViewController {
     // 유저디폴트에 저장된게 없다면 아무것도 안쓰여있음
     var nickName = ""
     
-//    var statusText: String {
-//        didSet {
-//            viewDidLoad()
-//        }
-//    }
-    
     /// 완료버튼을 누를 수 있는지
     var isAbleButton = false
     
@@ -132,7 +126,6 @@ class SettingProfileViewController: UIViewController {
         
         return true
     }
- 
 }
 
 extension SettingProfileViewController {
@@ -142,14 +135,11 @@ extension SettingProfileViewController {
         setRandomImage()
         cameraImageView.image = UIImage(named: "camera")
         
-//        if let nickname = UserDefaultManager.shared.ud.string(forKey: "UserNickname") {
-//            nickName = nickname
-//        }
         // textfieldeffects
         nicknameTextField.text = nickName
         nicknameTextField.placeholder = " 닉네임을 입력해주세요 :)"
         
-//        statusLabel.text = ""
+        statusLabel.text = ""
         statusLabel.textColor = CustomColor.pointColor
         statusLabel.font = .systemFont(ofSize: 13)
         

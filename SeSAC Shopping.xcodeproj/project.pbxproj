@@ -27,8 +27,6 @@
 		8B2F400B2B5BF3EF00205E28 /* UICollectionViewCell+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B2F400A2B5BF3EF00205E28 /* UICollectionViewCell+Extension.swift */; };
 		8B2F400F2B5C016D00205E28 /* RecentSearchTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B2F400D2B5C016D00205E28 /* RecentSearchTableViewCell.swift */; };
 		8B2F40102B5C016D00205E28 /* RecentSearchTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8B2F400E2B5C016D00205E28 /* RecentSearchTableViewCell.xib */; };
-		8B2F40132B5C017F00205E28 /* MainSearchTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B2F40112B5C017F00205E28 /* MainSearchTableViewCell.swift */; };
-		8B2F40142B5C017F00205E28 /* MainSearchTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8B2F40122B5C017F00205E28 /* MainSearchTableViewCell.xib */; };
 		8B2F40172B5C05CA00205E28 /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B2F40162B5C05CA00205E28 /* SearchViewController.swift */; };
 		8B2F40192B5C080E00205E28 /* SearchResultViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B2F40182B5C080E00205E28 /* SearchResultViewController.swift */; };
 		8B2F40202B5C0CB400205E28 /* SettingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B2F401F2B5C0CB400205E28 /* SettingViewController.swift */; };
@@ -48,6 +46,7 @@
 		8B90769F2B5D51D800AF01A8 /* Search.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B90769E2B5D51D800AF01A8 /* Search.swift */; };
 		8B9076A22B5D603500AF01A8 /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = 8B9076A12B5D603500AF01A8 /* Kingfisher */; };
 		8B9076A42B5D742A00AF01A8 /* WebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B9076A32B5D742A00AF01A8 /* WebViewController.swift */; };
+		8B9076AD2B5E85EE00AF01A8 /* SearchAPIManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B9076AC2B5E85EE00AF01A8 /* SearchAPIManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -71,8 +70,6 @@
 		8B2F400A2B5BF3EF00205E28 /* UICollectionViewCell+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UICollectionViewCell+Extension.swift"; sourceTree = "<group>"; };
 		8B2F400D2B5C016D00205E28 /* RecentSearchTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecentSearchTableViewCell.swift; sourceTree = "<group>"; };
 		8B2F400E2B5C016D00205E28 /* RecentSearchTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RecentSearchTableViewCell.xib; sourceTree = "<group>"; };
-		8B2F40112B5C017F00205E28 /* MainSearchTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainSearchTableViewCell.swift; sourceTree = "<group>"; };
-		8B2F40122B5C017F00205E28 /* MainSearchTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MainSearchTableViewCell.xib; sourceTree = "<group>"; };
 		8B2F40162B5C05CA00205E28 /* SearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
 		8B2F40182B5C080E00205E28 /* SearchResultViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchResultViewController.swift; sourceTree = "<group>"; };
 		8B2F401F2B5C0CB400205E28 /* SettingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingViewController.swift; sourceTree = "<group>"; };
@@ -91,6 +88,7 @@
 		8B90769B2B5D3F4200AF01A8 /* APIKey.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIKey.swift; sourceTree = "<group>"; };
 		8B90769E2B5D51D800AF01A8 /* Search.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Search.swift; sourceTree = "<group>"; };
 		8B9076A32B5D742A00AF01A8 /* WebViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebViewController.swift; sourceTree = "<group>"; };
+		8B9076AC2B5E85EE00AF01A8 /* SearchAPIManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchAPIManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -143,6 +141,7 @@
 				8B2F3FE02B5B9DED00205E28 /* Info.plist */,
 				8B2F3FED2B5BAC4300205E28 /* Enumeration.swift */,
 				8B90768C2B5CADEA00AF01A8 /* UserDefaultManager.swift */,
+				8B9076AC2B5E85EE00AF01A8 /* SearchAPIManager.swift */,
 			);
 			path = "SeSAC Shopping";
 			sourceTree = "<group>";
@@ -214,8 +213,6 @@
 			children = (
 				8B2F400D2B5C016D00205E28 /* RecentSearchTableViewCell.swift */,
 				8B2F400E2B5C016D00205E28 /* RecentSearchTableViewCell.xib */,
-				8B2F40112B5C017F00205E28 /* MainSearchTableViewCell.swift */,
-				8B2F40122B5C017F00205E28 /* MainSearchTableViewCell.xib */,
 			);
 			path = Search;
 			sourceTree = "<group>";
@@ -336,7 +333,6 @@
 				8B2F3FDF2B5B9DED00205E28 /* LaunchScreen.storyboard in Resources */,
 				8B9076952B5D21DE00AF01A8 /* SearchResultCollectionViewCell.xib in Resources */,
 				8B2F3FDC2B5B9DED00205E28 /* Assets.xcassets in Resources */,
-				8B2F40142B5C017F00205E28 /* MainSearchTableViewCell.xib in Resources */,
 				8B2F40302B5C154900205E28 /* SettingTableViewCell.xib in Resources */,
 				8B2F40092B5BEF4D00205E28 /* ProfileCollectionViewCell.xib in Resources */,
 				8B9076902B5CD5D500AF01A8 /* Setting.storyboard in Resources */,
@@ -358,7 +354,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				8B2F3FFC2B5BE45C00205E28 /* UIImageView+Extension.swift in Sources */,
-				8B2F40132B5C017F00205E28 /* MainSearchTableViewCell.swift in Sources */,
 				8B2F40272B5C120A00205E28 /* SettingProfileTableViewCell.swift in Sources */,
 				8B2F3FEE2B5BAC4300205E28 /* Enumeration.swift in Sources */,
 				8B9076942B5D21DE00AF01A8 /* SearchResultCollectionViewCell.swift in Sources */,
@@ -378,6 +373,7 @@
 				8B90768D2B5CADEA00AF01A8 /* UserDefaultManager.swift in Sources */,
 				8B2F402B2B5C137600205E28 /* UITableViewCell+Extension.swift in Sources */,
 				8B2F400B2B5BF3EF00205E28 /* UICollectionViewCell+Extension.swift in Sources */,
+				8B9076AD2B5E85EE00AF01A8 /* SearchAPIManager.swift in Sources */,
 				8B2F3FF82B5BDB4C00205E28 /* UIButton+Extension.swift in Sources */,
 				8B2F3FF32B5BBBEA00205E28 /* SettingProfileViewController.swift in Sources */,
 				8B2F3FEA2B5BA99F00205E28 /* OnboardingViewController.swift in Sources */,

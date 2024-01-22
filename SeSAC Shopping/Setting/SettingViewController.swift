@@ -36,16 +36,19 @@ class SettingViewController: UIViewController {
     }
     
     override func viewWillAppear(_ animated: Bool) {
+        print(#function)
         nickname = UserDefaultManager.shared.ud.string(forKey: "UserNickname")
         profileImage = UserDefaultManager.shared.ud.string(forKey: "UserProfileImage")
-        like = UserDefaultManager.shared.ud.array(forKey: "likeList")
+        like = UserDefaultManager.shared.ud.array(forKey: "LikeProducts")
+        
+        settingTableView.reloadRows(at: [IndexPath(row: 0, section: 0)], with: .none)
     }
     
     /// 처음부터 다시 시작하는 함수(이전 리소스 삭제)
     func reset() {
         UserDefaultManager.shared.ud.removeObject(forKey: "UserNickname")
         UserDefaultManager.shared.ud.removeObject(forKey: "UserProfileImage")
-        UserDefaultManager.shared.ud.removeObject(forKey: "likeList")
+        UserDefaultManager.shared.ud.removeObject(forKey: "LikeProducts")
     
         let windowScene = UIApplication.shared.connectedScenes.first as? UIWindowScene
         
@@ -96,6 +99,7 @@ extension SettingViewController: UITableViewDelegate, UITableViewDataSource {
         if indexPath.section == 0 {
             let cell = settingTableView.dequeueReusableCell(withIdentifier: SettingProfileTableViewCell.identifier, for: indexPath) as! SettingProfileTableViewCell
 //            print(nickname, profileImage)
+            
             if let image = profileImage, let nickname {
                 cell.configureCell(image: image, nickname: nickname, likeCount: like?.count ?? 0)
             }

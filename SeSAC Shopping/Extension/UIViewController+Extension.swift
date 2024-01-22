@@ -37,3 +37,23 @@ extension UIViewController: ReusableProtocol {
 }
 
 
+extension UIViewController {
+    /// 좋아요한 상품인지 확인
+    func checkLikedProduct(productid: String) -> UIImage {
+        
+        let likeList = UserDefaultManager.shared.ud.array(forKey: "LikeProducts")
+        if let likeList {
+            if likeList.contains(where: { id in
+                id as! String == productid
+            }) {
+                return ImageStyle.like!
+            } else {
+                return ImageStyle.notLike!
+            }
+            
+        } else { // 좋아요 정보가 없어도 빈 하트
+            return ImageStyle.notLike!
+        }
+    }
+    
+}

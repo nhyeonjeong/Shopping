@@ -18,5 +18,9 @@ enum CustomColor {
 enum ImageStyle {
 //    static let search = UIImage(systemName: "magnifyingglass")
     static let goBack = UIImage(systemName: "chevron.backward")
+    static let notLike = UIImage(systemName: "heart")
+    static let like = UIImage(systemName: "heart.fill")
+    
+    
 }
 

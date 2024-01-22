@@ -48,10 +48,12 @@ extension SearchViewController {
 // 서치바 return눌렀을 때 함수
 extension SearchViewController: UISearchBarDelegate {
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
-
         // 화면전환
         let vc = storyboard?.instantiateViewController(withIdentifier: SearchResultViewController.identifier) as! SearchResultViewController
  
+        vc.searchText = searchBar.text!
+//        vc.callRequest(text: searchBar.text!, sort: Group.sim)
+        
         navigationController?.pushViewController(vc, animated: true)
     }
 }

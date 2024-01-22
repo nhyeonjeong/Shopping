@@ -25,11 +25,8 @@ class SettingProfileTableViewCell: UITableViewCell {
         profileImageView.image = UIImage(named: image)
         print("configureCell")
         nameLabel.text = "떠나고 싶은 \(nickname)"
-        let likeString = UILabel()
-        likeString.text = "\(likeCount)개의 상품"
-        likeString.textColor = CustomColor.pointColor
-        
-        likeLabel.text = "\(likeString)을 좋아하고 있어요!" // 색이 과연 다르게 나올지...
+
+        likeLabel.text = "\(likeCount)개의 상품을 좋아하고 있어요!" // 색이 과연 다르게 나올지...
     }
 
 }
@@ -39,6 +36,12 @@ extension SettingProfileTableViewCell {
     func configureView() {
         backgroundUIView.backgroundColor = .clear
         profileImageView.setProfileBoarder(selected: true)
+        
+        nameLabel.textColor = CustomColor.textColor
+        nameLabel.font = .boldSystemFont(ofSize: 17)
+        
+        likeLabel.textColor = CustomColor.textColor
+        likeLabel.font = .boldSystemFont(ofSize: 15)
         
     }
 }

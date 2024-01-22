@@ -4,6 +4,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22130"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="collection view cell content view" minToolsVersion="11.0"/>
@@ -38,6 +39,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="1000" height="1000"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="tintColor" name="PointColor"/>
+                        <color key="selectedImageTintColor" name="PointColor"/>
                     </tabBar>
                     <connections>
                         <segue destination="U0F-cb-Lbj" kind="relationship" relationship="viewControllers" id="MwB-ks-eMO"/>
@@ -57,7 +60,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="K4d-bh-4er">
-                                <rect key="frame" x="0.0" y="123.33333333333331" width="393" height="694.66666666666674"/>
+                                <rect key="frame" x="0.0" y="119" width="393" height="699"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="l8P-Wx-mnP">
                                     <size key="itemSize" width="128" height="124"/>
@@ -87,27 +90,27 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <stackView opaque="NO" contentMode="scaleToFill" distribution="equalSpacing" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="M1r-YS-5OP">
-                                <rect key="frame" x="15" y="84" width="330" height="34.333333333333343"/>
+                                <rect key="frame" x="15" y="84" width="214" height="30"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="z3Z-aE-dLl">
-                                        <rect key="frame" x="0.0" y="0.0" width="75" height="34.333333333333336"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="46" height="30"/>
+                                        <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                         <state key="normal" title="Button"/>
-                                        <buttonConfiguration key="configuration" style="plain" title="Button"/>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vAU-Xu-t7i">
-                                        <rect key="frame" x="85" y="0.0" width="75" height="34.333333333333336"/>
+                                        <rect key="frame" x="56" y="0.0" width="46" height="30"/>
+                                        <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                         <state key="normal" title="Button"/>
-                                        <buttonConfiguration key="configuration" style="plain" title="Button"/>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lcf-9n-sN5">
-                                        <rect key="frame" x="170" y="0.0" width="75" height="34.333333333333336"/>
+                                        <rect key="frame" x="112" y="0.0" width="46" height="30"/>
+                                        <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                         <state key="normal" title="Button"/>
-                                        <buttonConfiguration key="configuration" style="plain" title="Button"/>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Dpw-Gi-yUl">
-                                        <rect key="frame" x="255" y="0.0" width="75" height="34.333333333333336"/>
+                                        <rect key="frame" x="168" y="0.0" width="46" height="30"/>
+                                        <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                         <state key="normal" title="Button"/>
-                                        <buttonConfiguration key="configuration" style="plain" title="Button"/>
                                     </button>
                                 </subviews>
                             </stackView>
@@ -126,6 +129,7 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="resultCollectionview" destination="K4d-bh-4er" id="9sa-dy-B0l"/>
                         <outlet property="resultCount" destination="wKk-Pb-ncH" id="iSa-62-asr"/>
                         <outletCollection property="classifyButtons" destination="z3Z-aE-dLl" collectionClass="NSMutableArray" id="X0H-62-lDn"/>
                         <outletCollection property="classifyButtons" destination="vAU-Xu-t7i" collectionClass="NSMutableArray" id="Yca-Rv-Vrl"/>
@@ -136,6 +140,40 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="uOj-hN-vY7" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="3249.6183206106871" y="-215.49295774647888"/>
+        </scene>
+        <!--Web View Controller-->
+        <scene sceneID="a5O-Yf-fP0">
+            <objects>
+                <viewController storyboardIdentifier="WebViewController" id="tqr-mP-xb1" customClass="WebViewController" customModule="SeSAC_Shopping" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="ibL-R0-EwG">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <wkWebView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ifa-2h-nxl">
+                                <rect key="frame" x="0.0" y="59" width="393" height="759"/>
+                                <color key="backgroundColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <wkWebViewConfiguration key="configuration">
+                                    <audiovisualMediaTypes key="mediaTypesRequiringUserActionForPlayback" none="YES"/>
+                                    <wkPreferences key="preferences"/>
+                                </wkWebViewConfiguration>
+                            </wkWebView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="daf-XP-5Af"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="Ifa-2h-nxl" firstAttribute="leading" secondItem="daf-XP-5Af" secondAttribute="leading" id="7r5-5U-qtt"/>
+                            <constraint firstItem="daf-XP-5Af" firstAttribute="trailing" secondItem="Ifa-2h-nxl" secondAttribute="trailing" id="KQy-s3-jZu"/>
+                            <constraint firstItem="Ifa-2h-nxl" firstAttribute="top" secondItem="daf-XP-5Af" secondAttribute="top" id="VvS-Nw-gJX"/>
+                            <constraint firstItem="daf-XP-5Af" firstAttribute="bottom" secondItem="Ifa-2h-nxl" secondAttribute="bottom" id="qfT-gF-cY4"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="webView" destination="Ifa-2h-nxl" id="T01-Ew-N2j"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="b7c-gh-Tjp" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="4258.7786259541981" y="-197.18309859154931"/>
         </scene>
         <!--Setting-->
         <scene sceneID="P1S-bc-M6y">
@@ -212,6 +250,9 @@
     <resources>
         <image name="magnifyingglass" catalog="system" width="128" height="117"/>
         <image name="person" catalog="system" width="128" height="121"/>
+        <namedColor name="PointColor">
+            <color red="0.28627450980392155" green="0.86274509803921573" blue="0.5725490196078431" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

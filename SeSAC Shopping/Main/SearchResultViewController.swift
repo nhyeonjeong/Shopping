@@ -13,20 +13,22 @@ class SearchResultViewController: UIViewController {
     enum Group: String, CaseIterable {
         case sim = " 정확도 "
         case date = " 날짜순 "
-        case asc = " 가격높은순 "
-        case dsc = " 가격낮은순 "
+        case dsc = " 가격높은순 "
+        case asc = " 가격낮은순 "
         
         func getNameString() -> String {
             return String(describing: self)
         }
-        
     }
     
     let buttonName = Group.allCases
     
+    @IBOutlet weak var buttonStackView: UIStackView!
     @IBOutlet weak var resultCount: UILabel!
-    @IBOutlet var classifyButtons: [UIButton]!
+    @IBOutlet var sortButtons: [UIButton]!
     @IBOutlet weak var resultCollectionview: UICollectionView!
+    
+    var selectedSort = Group.sim // 선택된 버튼
     
     var searchText = "" // 검색단어 넘어와서 네트워크 통신
     
@@ -51,8 +53,18 @@ class SearchResultViewController: UIViewController {
     }
     
     override func viewWillAppear(_ animated: Bool) {
-        // 웹뷰에서 한 좋아요가 반영되도록
+        // 웹뷰에서 한 좋아요가 바로 반영되도록
         resultCollectionview.reloadData()
+    }
+    
+    // sortButtons 눌렸을 때
+    @IBAction func sortButtonClicked(_ sender: UIButton) {
+        callRequest(text: searchText, sort: Group.allCases[sender.tag])
+        
+        // 버튼 디자인도 바뀌도록
+        selectedSort = Group.allCases[sender.tag]
+        configureButtonColor()
+        buttonStackView.reloadInputViews()
     }
     
     func callRequest(text: String, sort: Group) {
@@ -93,17 +105,33 @@ extension SearchResultViewController {
     func configureView() {
         
         navigationItem.title = searchText
+
+        configureButtonColor()
         
-        for i in 0..<buttonName.count {
-            classifyButtons[i].setTitle(buttonName[i].rawValue, for: .normal)
-            classifyButtons[i].setTitleColor(CustomColor.textColor, for: .normal)
-            classifyButtons[i].layer.cornerRadius = 8
-            classifyButtons[i].layer.borderWidth = 1
-            classifyButtons[i].layer.borderColor = CustomColor.textColor?.cgColor
-        }
         resultCount.textColor = CustomColor.pointColor
         
         setBackBarButton()
+    }
+    
+    /// 상단 버튼 색
+    func configureButtonColor() {
+        for i in 0..<buttonName.count {
+            // 선택된 버튼이라면
+            if selectedSort == Group.allCases[i] {
+                sortButtons[i].setTitleColor(.black, for: .normal)
+                sortButtons[i].backgroundColor = CustomColor.textColor
+            } else {
+                sortButtons[i].setTitleColor(CustomColor.textColor, for: .normal)
+                sortButtons[i].backgroundColor = .black
+
+            }
+            sortButtons[i].layer.borderColor = CustomColor.textColor?.cgColor
+            // 공통되는 부분
+            sortButtons[i].tag = i // 버튼마다 tag달아주기
+            sortButtons[i].setTitle(buttonName[i].rawValue, for: .normal)
+            sortButtons[i].layer.cornerRadius = 8
+            sortButtons[i].layer.borderWidth = 1
+        }
     }
     
 }

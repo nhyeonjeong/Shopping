@@ -57,3 +57,24 @@ extension UIViewController {
     }
     
 }
+
+extension UIViewController {
+    // 알람띄우기(UIViewController+Extension)
+    func showAlert(title: String, message: String, buttonTitle: String, completionHandelr: @escaping () -> Void) {
+        
+        let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
+        
+        // 버튼 클릭하면 실행하는 코드
+        let action = UIAlertAction(title: buttonTitle, style: .default) { _ in
+            
+            completionHandelr()
+        }
+        
+        let cancel = UIAlertAction(title: "취소", style: .cancel)
+        
+        alert.addAction(action)
+        alert.addAction(cancel)
+        
+        present(alert, animated: true)
+    }
+}

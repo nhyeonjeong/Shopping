@@ -21,7 +21,35 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         UILabel.appearance().textColor = UIColor(red: 255, green: 255, blue: 255, alpha: 1)
         
         
+        // notification 허용할건지?
+        UNUserNotificationCenter.current().requestAuthorization(options: [.alert, .sound, .badge]) { success, error in
+            print(success, error)
+        }
+        
+        // 매일 한 번씩 보내줄 노티 만들기 - appdelegate에서 만들어야 실행될 것 같아서 그렇게 만듦,.
+        everydayNotification()
+        
         return true
+    }
+    
+    /// Nofification
+    func everydayNotification() {
+        
+        let content = UNMutableNotificationContent()
+        content.title = "새싹 쇼핑에서 알립니다"
+        content.body = "하루에 한 번씩 쇼핑리스트를 관리해보세요!"
+        content.badge = 1
+        
+        var component = DateComponents()
+        
+        component.hour = 12
+        component.minute = 00
+        
+        let trigger = UNCalendarNotificationTrigger(dateMatching: component, repeats: true)
+        
+        let request = UNNotificationRequest(identifier: "everydayNoti", content: content, trigger: trigger)
+        
+        UNUserNotificationCenter.current().add(request)
     }
 
     // MARK: UISceneSession Lifecycle

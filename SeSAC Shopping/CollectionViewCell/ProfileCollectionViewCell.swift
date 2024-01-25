@@ -25,8 +25,11 @@ class ProfileCollectionViewCell: UICollectionViewCell {
 
 extension ProfileCollectionViewCell {
     func configureView() {
-        
-        self.profileImageView.setProfileBoarder(selected: self.isSelectedImage)
+        DispatchQueue.main.async { // dispatch안해주면 이상하게 나옴(UI그리는 거는 main에서 해줘야함)
+            self.layer.cornerRadius = self.frame.width / 2
+        }
+        profileImageView.contentMode = .scaleAspectFill
+        profileImageView.setProfileBoarder(selected: isSelectedImage)
         
     }
 }

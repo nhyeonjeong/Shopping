@@ -24,17 +24,20 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // notification 허용할건지?
         UNUserNotificationCenter.current().requestAuthorization(options: [.alert, .sound, .badge]) { success, error in
             print(success, error)
+            if success {
+                // 매일 한 번씩 보내줄 노티 만들기 - appdelegate에서 만들기..?
+                self.everydayNotification()
+            } else {
+                print("거부하였습니다")
+            }
         }
-        
-        // 매일 한 번씩 보내줄 노티 만들기 - appdelegate에서 만들어야 실행될 것 같아서 그렇게 만듦,.
-        everydayNotification()
         
         return true
     }
     
     /// Nofification
     func everydayNotification() {
-        
+    
         let content = UNMutableNotificationContent()
         content.title = "새싹 쇼핑에서 알립니다"
         content.body = "하루에 한 번씩 쇼핑리스트를 관리해보세요!"

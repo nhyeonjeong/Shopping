@@ -112,11 +112,12 @@ extension SettingProfileImageViewController: UICollectionViewDelegate, UICollect
         
     }
     
+    // 셀이 선택되면
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         // 갱신
         self.selectedImageString = ProfileImage.allCases[indexPath.row].getImageName()
 //        print("selected: \(self.selectedImageString)")
-        self.viewDidLoad()// 상단 프로필 이미지 바꾸기
+        self.setImageView()// 상단 프로필 이미지 바꾸기
     
         self.profileCollectionView.reloadData()
         

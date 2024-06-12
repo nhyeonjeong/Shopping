@@ -61,12 +61,12 @@
 
 ### `2. GCD를 이용해 CollectionViewCell의 cornerRadius 적용`
 
-1-1) 문제
+2-1) 문제
 
 프로필이미지가 나열된 collectionview에서 cell의 radius를 차지한 이미지크기의 절반으로 주고 싶었지만 예상과 다르게 원모양으로 cell이 그려지지 않음.
 이미지의 정확한 frame.width가 정해지기 전에 먼저 radius를 적용하기 때문에 원하는 모양이 나오지 않았던 것.
 
-1-2) 해결
+2-2) 해결
 
 radius를 적용하는 코드의 시점은 약간 늦춰주기 위해 GCD 사용. 
 UI는 메인스레드에서 그려야 하고, Queue에 해당 작업을 보내고 이후에 처리하도록 DispathQueue.main.async적용

@@ -11,7 +11,7 @@ extension UIImageView {
     /// 프로필 디자인 구성
     func setProfileBoarder(selected: Bool) {
         
-        DispatchQueue.main.async { // dispatch안해주면 이상하게 나옴(UI그리는 거는 main에서 해줘야함)
+        DispatchQueue.main.async {
             self.layer.cornerRadius = self.frame.width / 2
         }
         self.contentMode = .scaleAspectFill

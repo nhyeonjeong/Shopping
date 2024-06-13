@@ -93,23 +93,16 @@ extension SettingProfileImageViewController: UICollectionViewDelegate, UICollect
         
         // 이미지이름 자체 가져오기
         let profileName = ProfileImage.allCases[indexPath.row].getImageName()
-        
-        cell.configureCell(imageName: profileName)
-        
-//        print("cellfor: \(self.selectedImageString)")
 
         // 선택됐다면 테두리 효과
         if ProfileImage.allCases[indexPath.row].getImageName() == self.selectedImageString {
             cell.isSelectedImage = true
-            cell.configureView()
             
         } else {
             cell.isSelectedImage = false
-            cell.configureView()
         }
-        
+        cell.configureCell(imageName: profileName)
         return cell
-        
     }
     
     // 셀이 선택되면
@@ -125,6 +118,4 @@ extension SettingProfileImageViewController: UICollectionViewDelegate, UICollect
         UserDefaultManager.shared.ud.set(selectedImageString, forKey: "TempProfileImage")
         
     }
-    
-    
 }

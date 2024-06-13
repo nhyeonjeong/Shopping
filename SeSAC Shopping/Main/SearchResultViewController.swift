@@ -131,7 +131,6 @@ extension SearchResultViewController: UICollectionViewDelegate, UICollectionView
     }
     
     func settingLayout() -> UICollectionViewFlowLayout {
-        
         let layout = UICollectionViewFlowLayout()
         let width = UIScreen.main.bounds.width - (inset * 2) - itemSpacing
         

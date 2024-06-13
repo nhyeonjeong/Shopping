@@ -13,23 +13,13 @@ class ProfileCollectionViewCell: UICollectionViewCell {
     var isSelectedImage: Bool = false
     override func awakeFromNib() {
         super.awakeFromNib()
-        
-        configureView()
     }
     
     func configureCell(imageName: String) {
         profileImageView.image = UIImage(named: imageName)
-    }
-
-}
-
-extension ProfileCollectionViewCell {
-    func configureView() {
-        DispatchQueue.main.async { // dispatch안해주면 이상하게 나옴(UI그리는 거는 main에서 해줘야함)
-            self.layer.cornerRadius = self.frame.width / 2
-        }
         profileImageView.contentMode = .scaleAspectFill
         profileImageView.setProfileBoarder(selected: isSelectedImage)
-        
     }
+
 }
+

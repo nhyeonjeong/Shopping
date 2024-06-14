@@ -29,13 +29,14 @@
 
 ## 🛍️기술설명
 - MVP패턴
+  - 왜 이기술을 사용하게 되었고, 어떤 부분을 구현했는지? 얼마나 잘 설계했는지의 느낌?
 - 회원, 북마크 등 사용하는 부분이 많아 UserDefulat를 관리하는 class Singleton패턴으로 구성
 - UserDefault에 사용자의 닉네임, 북마크한 상품의 id 저장
-- Alamofire을 사용한 네트워크통신 NetworkManager
-    - 통신 성공시 따라 completionHandler으로 결과 반환
-- 커서기반 페이지네이션
+- 네트워크 요청 모델을 구조화하기 위해 NetworkManager 구성 및 completionHandler 활용
+    - 통신 성공시 completionHandler으로 결과 반환
+- Offset-Based Pagenation 로 상품 조회 
 - UserNotification은 AppDelegate에서 알람허용확인 및 등록
-- 여러 부분에서 사용되는 함수들은 extension으로 분리
+- Extension/Protocol 를 통해 효율적으로 메서드 구성
   
 ## 🛍️트러블슈팅
 ### `1. CollectionviewCell의 재사용 문제 해결 `

@@ -28,10 +28,10 @@
 - UNUserNotificationCenter
 
 ## 🛍️기술설명
-- MVP패턴
-  - 왜 이기술을 사용하게 되었고, 어떤 부분을 구현했는지? 얼마나 잘 설계했는지의 느낌?
-- 회원, 북마크 등 사용하는 부분이 많아 UserDefulat를 관리하는 class Singleton패턴으로 구성
-- UserDefault에 사용자의 닉네임, 북마크한 상품의 id 저장
+- MVC패턴
+  - 단순한 기능구현을 위해 ViewController에 UI, 비즈니스 로직 구성
+- UserDefaultManager class Singleton패턴으로 구성
+  - 사용자의 닉네임, 북마크한 상품의 id 저장 등 UserDefault를 사용하는 부분이 많아 Singleton으로 구성
 - 네트워크 요청 모델을 구조화하기 위해 NetworkManager 구성 및 completionHandler 활용
     - 통신 성공시 completionHandler으로 결과 반환
 - Offset-Based Pagenation 로 상품 조회 
@@ -83,6 +83,6 @@ UI는 메인스레드에서 그려야 하고, Queue에 해당 작업을 보내�
 
 
 ## 🛍️기술회고
-extension으로 연관성있는 코드끼리 분리하여 코드를 작성한 것은 좋았지만, ViewController에 UI와 관련된 코드를 다 넣다 보니까 코드도 길어지고 가독성이 떨어졌던 것 같음.
-데이터끼리 가공되고 연산되는 과정은 또 다른 파일로 분리해서 사용하는 것이 이후 유지보수에 좋을 것 같아서 다음에는 코드를 분리해서 사용하려고 함.
-UI는 스토리보드로 짜니까 한 눈에 화면구성을 알 수 있어서 좋았지만, constraints를 조정할 때 화면이 복잡해지면 한계가 있는 것을 느껴 코드베이스로 작업해보려고 함.
+extension과 Protocol로 연관성있는 코드끼리 분리하여 작성하였으나 하나의 ViewController에 모든 코드를 작성하다 보니 코드도 길어지고 가독성이 떨어졌던 것 같습니다. 
+그래서 MVVM패턴을 적용해 비즈니스로직을 분리해서 사용하는 것이 유지보수와 코드의 독립성, 가독성에 좋을 것 같다는 생각을 하게 되었습니다.
+스토리보드로 구현한 UI는 한 눈에 화면구성을 알 수 있어서 좋았지만, 화면이 복잡해지면 constraints를 조정할 때 한계가 있는 것을 느꼈고 코드베이스에 대해 생각해보게 되었습니다.

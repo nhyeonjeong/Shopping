@@ -18,7 +18,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="ySw-Ta-Dn0">
-                                <rect key="frame" x="40" y="276.66666666666669" width="313" height="313.00000000000006"/>
+                                <rect key="frame" x="40" y="280" width="313" height="313"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="ySw-Ta-Dn0" secondAttribute="height" multiplier="1:1" id="33u-vj-Hrd"/>
                                 </constraints>
@@ -34,25 +34,24 @@
                                     <action selector="startButtonClicked:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="vCD-Jg-kRs"/>
                                 </connections>
                             </button>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="tiS-S2-G4m">
-                                <rect key="frame" x="80" y="123" width="233" height="103.66666666666669"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" secondItem="tiS-S2-G4m" secondAttribute="height" multiplier="211:94" id="9Bh-xT-ESe"/>
-                                </constraints>
-                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cd8-Pk-jJ1">
+                                <rect key="frame" x="80" y="150" width="233" height="20.333333333333343"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="vDu-zF-Fre"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="ySw-Ta-Dn0" firstAttribute="top" secondItem="tiS-S2-G4m" secondAttribute="bottom" constant="50" id="0gM-Ow-nPb"/>
-                            <constraint firstItem="tiS-S2-G4m" firstAttribute="centerX" secondItem="5EZ-qb-Rvc" secondAttribute="centerX" id="1qL-Wv-flW"/>
+                            <constraint firstItem="cd8-Pk-jJ1" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="80" id="3L1-Kq-97X"/>
                             <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="ySw-Ta-Dn0" secondAttribute="trailing" constant="40" id="GS8-h5-JFm"/>
                             <constraint firstItem="vDu-zF-Fre" firstAttribute="bottom" secondItem="eGp-6a-1zj" secondAttribute="bottom" constant="10" id="Hkq-yr-qQX"/>
                             <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="eGp-6a-1zj" secondAttribute="trailing" constant="20" id="Tde-sc-xeV"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="cd8-Pk-jJ1" secondAttribute="trailing" constant="80" id="TkI-HF-pqV"/>
                             <constraint firstItem="eGp-6a-1zj" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="20" id="ZDf-QN-2Ow"/>
-                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="tiS-S2-G4m" secondAttribute="trailing" constant="80" id="chQ-Zb-dIc"/>
-                            <constraint firstItem="tiS-S2-G4m" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" constant="20" id="mD8-7C-X5Q"/>
-                            <constraint firstItem="tiS-S2-G4m" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="80" id="qm8-lR-hbd"/>
+                            <constraint firstItem="cd8-Pk-jJ1" firstAttribute="top" secondItem="5EZ-qb-Rvc" secondAttribute="top" constant="150" id="nZ6-mu-v2t"/>
+                            <constraint firstItem="eGp-6a-1zj" firstAttribute="top" secondItem="ySw-Ta-Dn0" secondAttribute="bottom" constant="170" id="oDC-HV-Z6q"/>
                             <constraint firstItem="ySw-Ta-Dn0" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="40" id="yEF-EL-hie"/>
                         </constraints>
                     </view>
@@ -60,12 +59,12 @@
                     <connections>
                         <outlet property="mainImageView" destination="ySw-Ta-Dn0" id="tk2-ln-vsB"/>
                         <outlet property="startAppButton" destination="eGp-6a-1zj" id="z9b-aQ-NSU"/>
-                        <outlet property="titleImageView" destination="tiS-S2-G4m" id="q0t-a1-q99"/>
+                        <outlet property="titleLabel" destination="cd8-Pk-jJ1" id="RDb-AE-j0a"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1169" y="-27"/>
+            <point key="canvasLocation" x="1168.7022900763359" y="-27.464788732394368"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="dwD-vM-M3F">

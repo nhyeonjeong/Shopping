@@ -9,7 +9,9 @@ import UIKit
 
 class OnboardingViewController: UIViewController {
 
-    @IBOutlet weak var titleImageView: UIImageView!
+//    @IBOutlet weak var titleImageView: UIImageView!
+    
+    @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var mainImageView: UIImageView!
     @IBOutlet weak var startAppButton: UIButton!
     
@@ -36,9 +38,13 @@ class OnboardingViewController: UIViewController {
 extension OnboardingViewController {
     func settingView() {
 
-        titleImageView.image = UIImage(named: "sesacShopping")
-        titleImageView.contentMode = .scaleAspectFill
-        
+//        titleImageView.image = UIImage(named: "sesacShopping")
+//        titleImageView.contentMode = .scaleAspectFill
+//        
+        titleLabel.text = "Hyeon's\nShopping"
+        titleLabel.textColor = .orange
+        titleLabel.textAlignment = .center
+        titleLabel.font = .systemFont(ofSize: 36, weight: .bold)
         mainImageView.image = UIImage(named: "onboarding")
         mainImageView.contentMode = .scaleAspectFill
         

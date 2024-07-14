@@ -21,7 +21,7 @@
 - 매일 정오 알람기능
 
 ## 🛍️사용한 기술스택
-- UIKit, StoryBoard, MVP
+- UIKit, StoryBoard, MVC
 - Alamofire, Kingfisher, TextFieldEffects, WebKit
 - GCD, Singleton, completionHandler, UserDefault
 - UICollectionView, UICollectionViewDataSourcePrefetching, UITableView

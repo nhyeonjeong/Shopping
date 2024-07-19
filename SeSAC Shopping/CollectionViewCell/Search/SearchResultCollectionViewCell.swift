@@ -8,8 +8,18 @@
 import UIKit
 import Kingfisher
 
+class DataFormatter {
+    func decimalNumberFormatter(_ num: Int) -> String {
+        let numberFormatter: NumberFormatter = NumberFormatter()
+        numberFormatter.numberStyle = .decimal
+        
+        let result: String = numberFormatter.string(for: num)!
+        return result
+    }
+}
 class SearchResultCollectionViewCell: UICollectionViewCell {
 
+    let dataFormmater = DataFormatter()
     @IBOutlet weak var resultImageView: UIImageView!
     
     @IBOutlet weak var mallNameLabel: UILabel!
@@ -35,8 +45,12 @@ class SearchResultCollectionViewCell: UICollectionViewCell {
         }
         
         mallNameLabel.text = item.mallName
-        titleLabel.text = item.title
-        priceLabel.text = "₩\(item.lprice)"
+        titleLabel.text = item.title.htmlEscaped
+        if let num = Int(item.lprice) {
+            priceLabel.text = "₩\(dataFormmater.decimalNumberFormatter(num))"
+        } else {
+            priceLabel.text = "₩0"
+        }
         productId = item.productId
         
         // productId 지정한 뒤 좋아요버튼 그리기

@@ -34,8 +34,6 @@ class SearchViewController: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         userName = UserDefaultManager.shared.ud.string(forKey: "UserNickname")
-        navigationItem.title = "떠나고 싶은 \(userName ?? "이름없음")님의 새싹쇼핑"
-        
         hideTableView()
     }
     

@@ -56,7 +56,7 @@ class WebViewController: UIViewController {
 extension WebViewController {
     
     func configureView() {
-        navigationItem.title = navigationTitle
+        navigationItem.title = navigationTitle.htmlEscaped
         // 뒤로가기 버튼
         setBackBarButton()
         
@@ -75,7 +75,7 @@ extension WebViewController {
     func setBarButton() {
         // 하트 버튼 그려지는 곳
         let likeButton = UIBarButtonItem(image: likeSystemImage, style: .plain, target: self, action: #selector(likeBarButtonItemClicked))
-        likeButton.tintColor = CustomColor.textColor
+        likeButton.tintColor = CustomColor.pointColor
         navigationItem.rightBarButtonItem = likeButton
     }
     

@@ -9,7 +9,7 @@ import UIKit
 import Alamofire
 
 class SearchResultViewController: UIViewController {
-    
+    let dataFormmater = DataFormatter()
     @IBOutlet weak var buttonStackView: UIStackView!
     @IBOutlet weak var resultCount: UILabel!
     @IBOutlet var sortButtons: [UIButton]!
@@ -44,7 +44,7 @@ class SearchResultViewController: UIViewController {
         
         manager.callRequest(text: searchText, sort: Group.sim, page: page) { value in
             self.resultList = value
-            self.resultCount.text = "\(self.resultList.total) 개의 검색 결과"
+            self.resultCount.text = "\(self.dataFormmater.decimalNumberFormatter(self.resultList.total)) 개의 검색 결과"
             // 통신 후에는 컬렉션뷰 다시 그리기
 //            self.resultCollectionview.reloadData()
             

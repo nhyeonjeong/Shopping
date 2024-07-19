@@ -83,9 +83,10 @@ class SearchResultViewController: UIViewController {
 extension SearchResultViewController {
     
     func configureView() {
+        view.backgroundColor = UIColor(named: "background")
+        resultCollectionview.backgroundColor = .clear
         
         navigationItem.title = searchText
-
         configureButtonColor()
         
         resultCount.textColor = CustomColor.pointColor
@@ -98,14 +99,14 @@ extension SearchResultViewController {
         for i in 0..<buttonName.count {
             // 선택된 버튼이라면
             if selectedSort == Group.allCases[i] {
-                sortButtons[i].setTitleColor(.black, for: .normal)
-                sortButtons[i].backgroundColor = CustomColor.textColor
+                sortButtons[i].setTitleColor(.white, for: .normal)
+                sortButtons[i].backgroundColor = CustomColor.pointColor // 검은색?
             } else {
-                sortButtons[i].setTitleColor(CustomColor.textColor, for: .normal)
-                sortButtons[i].backgroundColor = .black
+                sortButtons[i].setTitleColor(CustomColor.pointColor, for: .normal)
+                sortButtons[i].backgroundColor = .white
 
             }
-            sortButtons[i].layer.borderColor = CustomColor.textColor?.cgColor
+            sortButtons[i].layer.borderColor = CustomColor.pointColor?.cgColor
             // 공통되는 부분
             sortButtons[i].tag = i // 버튼마다 tag달아주기
             sortButtons[i].setTitle(buttonName[i].rawValue, for: .normal)

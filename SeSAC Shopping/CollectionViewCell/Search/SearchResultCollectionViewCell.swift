@@ -36,7 +36,7 @@ class SearchResultCollectionViewCell: UICollectionViewCell {
         
         mallNameLabel.text = item.mallName
         titleLabel.text = item.title
-        priceLabel.text = item.lprice
+        priceLabel.text = "₩\(item.lprice)"
         productId = item.productId
         
         // productId 지정한 뒤 좋아요버튼 그리기
@@ -91,7 +91,7 @@ extension SearchResultCollectionViewCell {
         resultImageView.layer.cornerRadius = 15
         
         likeButton.layer.cornerRadius = likeButton.frame.width / 2
-        likeButton.tintColor = .black
+        likeButton.tintColor = .point
         likeButton.backgroundColor = .white
         
         mallNameLabel.font = .systemFont(ofSize: 13)
